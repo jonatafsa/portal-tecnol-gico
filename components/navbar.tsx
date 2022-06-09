@@ -65,7 +65,7 @@ export default function Navbar() {
 }
 
 export const useEventListener = (
-  target: EventTarget,
+  target: EventTarget | undefined,
   event: string,
   listener: EventListenerOrEventListenerObject,
   trigger = true
