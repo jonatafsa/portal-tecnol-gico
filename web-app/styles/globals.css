@@ -1,0 +1,592 @@
+/* _________________________ Imports _________________________ */
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* _________________________ Website Theme _________________________ */
+
+:root {
+  --hue-1: 257;
+  --hue-2: 47;
+  --main-color-1: hsl(var(--hue-1), 100%, 60%);
+  --main-color-dark-1: hsl(var(--hue-1), 69%, 50%);
+  --main-color-2: hsl(var(--hue-2), 100%, 61%);
+  --main-color-dark-2: hsl(var(--hue-2), 82%, 55%);
+  --section-padding: 7rem;
+}
+
+body {
+  --bg-color: hsl(var(--hue-1), 100%, 97%);
+  --bg-color-1: hsl(var(--hue-1), 100%, 95.5%);
+  --bg-color-2: #fff;
+  --bg-color-3: hsl(var(--hue-1), 100%, 98%);
+  --bg-color-transparent: rgba(255, 255, 255, 0.6);
+  --heading-color: hsl(var(--hue-1), 61%, 24%);
+  --text-color: hsl(var(--hue-1), 17%, 63%);
+}
+
+body.dark {
+  --bg-color: hsl(var(--hue-1), 19%, 15%);
+  --bg-color-1: hsl(var(--hue-1), 21%, 11%);
+  --bg-color-2: hsl(var(--hue-1), 23%, 19%);
+  --bg-color-3: hsl(var(--hue-1), 23%, 24%);
+  --bg-color-transparent: hsla(var(--hue-1), 23%, 19%, 0.6);
+  --heading-color: hsl(var(--hue-1), 100%, 95%);
+  --text-color: hsl(var(--hue-1), 8%, 75%);
+}
+
+body.dark .st1 {
+  fill: hsla(var(--hue-1), 18%, 29%)
+}
+
+body.dark .shape.square {
+  opacity: .07;
+}
+
+body.dark .toggle-btn {
+  background-color: var(--bg-color-3);
+}
+
+body.dark .toggle-btn:hover {
+  background-color: brightness(110%);
+}
+
+
+body.dark .nav-link:hover::after,
+body.dark .nav-link.active::after {
+  opacity: .6;
+}
+
+body.dark .form-input:hover {
+  filter: brightness(110%);
+}
+
+/* _________________________ General Styles _________________________ */
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+  font-family: "Poppins", sans-serif;
+  transition: .3s background-color;
+}
+
+body.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+::selection {
+  background-color: hsla(var(--hue-1), 100%, 60%, 0.9);
+  color: #FFF;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.not-scrolled {
+  height: 7rem;
+}
+
+.scrolled {
+  height: 4.5rem;
+  background-color: var(--bg-color-transparent);
+  backdrop-filter: blur(20px);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+input {
+  display: inline-block;
+  padding: .8rem 1.6rem;
+  font-size: .8rem;
+  background: var(--bg-color-3);
+  border: 2px solid var(--bg-color-3);
+  width: 100%;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--heading-color);
+  outline: none;
+  transition: .3s;
+}
+
+select {
+  padding: .8rem 1.6rem;
+  background: var(--bg-color-3);
+  border: 2px solid var(--bg-color-3);
+  width: 100%;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--heading-color);
+  outline: none;
+  transition: .3s;
+}
+
+option {
+  font-size: 18px;
+  padding: 2rem;
+}
+
+button {
+  padding: .8rem 1.6rem;
+  font-size: .8rem;
+  min-width: 100px;
+  border-radius: 15px;
+  background-color: var(--main-color-1);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  background-color: var(--main-color-dark-1);
+  transform: scale(1.01);
+}
+
+a {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* =================================== REUSABLE CSS =================================== */
+
+.logo {
+  margin-right: 1.5rem;
+  height: 120px;
+  line-height: 120px;
+  font-family: "Abril Fatface", cursive;
+  font-size: 1.5rem;
+  color: var(--heading-color);
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.logo span {
+  color: var(--main-color-1);
+}
+
+.min-box-container {
+  max-width: 900px;
+}
+
+.title {
+  color: var(--heading-color);
+  text-transform: uppercase;
+  font-size: 1rem;
+  border-left: 3px solid var(--main-color-2);
+  padding: .13rem .75rem;
+  margin-bottom: .45rem;
+  font-weight: 500;
+  transition: .3s color;
+}
+
+.hide {
+  display: none;
+  opacity: .15; 
+  width: 1px;
+  pointer-events: none;
+}
+
+/* =================================== MENU ADN MODAL TOGGLE =================================== */
+
+.toggleMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100vh;
+  background-color: var(--bg-color-1);
+  z-index: 99;
+  transition: .3s;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.toggleMenu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 11;
+  pointer-events: none;
+}
+
+.modalOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .85);
+  opacity: 0;
+  transition: .3s;
+  z-index: 90;
+}
+
+.admin.open .modalOverlay {
+  opacity: 1;
+}
+
+.admin.open .modal {
+  pointer-events: auto;
+}
+
+.nav.open .modalOverlay {
+  opacity: 1;
+}
+
+.nav.open .modal {
+  pointer-events: auto;
+}
+
+.toggleMenuOpen {
+  width: 20rem;
+  padding: 10rem 3.75rem;
+  opacity: 1;
+}
+
+.toggleMenuOpen .modal {
+  pointer-events: auto;
+}
+
+.close {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 1.5rem;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: rgb(143, 61, 61);
+}
+
+/* =================================== COLORS TAGS =================================== */
+.red {
+  padding: .3rem .5rem;
+  border-radius: .3rem;
+  background-color: rgb(184, 35, 35);
+  color: #FFF;
+  font-size: .8rem;
+}
+
+.blue {
+  padding: .3rem .5rem;
+  border-radius: .3rem;
+  background-color: rgb(35, 75, 184);
+  color: #FFF;
+  font-size: .8rem;
+}
+
+.green {
+  padding: .3rem .5rem;
+  border-radius: .3rem;
+  background-color: rgb(35, 184, 139);
+  color: #FFF;
+  font-size: .8rem;
+}
+
+.yellow {
+  padding: .3rem .5rem;
+  border-radius: .3rem;
+  background-color: rgb(198, 201, 31);
+  color: #FFF;
+  font-size: .8rem;
+}
+
+.gray {
+  padding: .3rem .5rem;
+  border-radius: .3rem;
+  background-color: rgb(70, 70, 70);
+  color: #FFF;
+  font-size: .8rem;
+}
+
+.black {
+  padding: .3rem .5rem;
+  border-radius: .3rem;
+  background-color: rgb(15, 15, 15);
+  color: #FFF;
+  font-size: .8rem;
+}
+
+.active-yellow {
+  color: rgb(198, 201, 31);
+}
+
+
+.active-green {
+  color: rgb(35, 184, 139);
+}
+
+/* =================================== CHECK BOXES =================================== */
+
+.ks-cboxtags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+ul.ks-cboxtags li label {
+  width: 13rem;
+  font-size: .85rem;
+  display: inline-block;
+  background-color: var(--bg-color-2);
+  border: 2px solid rgba(139, 139, 139, .3);
+  color: #adadad;
+  border-radius: .5rem;
+  white-space: nowrap;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: all .3s;
+}
+
+ul.ks-cboxtags li label {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+ul.ks-cboxtags li label::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 900;
+  font-size: 12px;
+  padding: 2px 6px 2px 2px;
+  content: ".";
+  transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked+label::before {
+  content: "+";
+  transform: rotate(-360deg);
+  transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked+label {
+  background-color: var(--main-color-2);
+  color: var(--main-color-1);
+  font-weight: 800;
+  transition: all .2s;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+  display: absolute;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:focus+label {
+  border: 2px solid var(--main-color-1);
+}
+
+.insertCategoryForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% + 400px));
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: .2s;
+}
+
+.admin.open .insertCategoryForm {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: .45s .1s;
+  z-index: 99;
+}
+
+
+.insertCategoryForm form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem;
+  gap: 1rem;
+  width: 700px;
+  background-color: var(--bg-color-1);
+  border-radius: .8rem;
+}
+
+.insertCategoryForm .buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+.insertCategoryForm .buttons .btn {
+  border-radius: .3rem;
+}
+
+
+.insertCategoryForm .buttons .btn-secondary {
+  border-radius: .3rem;
+  background-color: rgb(151, 53, 53);
+}
+
+/* =================================== LOADER =================================== */
+
+.lds-spinner {
+  color: official;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: #fff;
+}
+
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* =================================== BLOG STYLES =================================== */
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+  align-items: center;
+}
+
+.iframe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.iframe iframe {
+  width: 900px;
+  height: 400px;
+}

@@ -1,0 +1,97 @@
+.container {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: 1rem;
+	transition: .3s;
+	z-index: 99;
+}
+
+.container .bars {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	color: var(--main-color-1);
+	font-size: 1.75rem;
+}
+
+.container .bars .btn {
+	cursor: pointer;
+	transition: .3s;
+}
+
+.container .bars .btn:hover {
+	transform: scale(1.05);
+}
+
+.container .logo {
+	margin-right: 1.5rem;
+	height: 120px;
+	line-height: 120px;
+	font-family: "Abril Fatface", cursive;
+	font-size: 1.5rem;
+	color: var(--heading-color);
+	letter-spacing: 1px;
+	transition: .3s;
+}
+
+.container .logo span {
+	color: var(--main-color-1);
+}
+
+.container .socialMedia {
+	display: flex;
+	gap: 1rem;
+	font-size: 2rem;
+	color: #CCC;
+}
+
+.container .socialMedia .insta {
+	padding: .1rem;
+	border-radius: .5rem;
+	background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+	transition: .3s;
+	cursor: pointer;
+}
+
+.container .socialMedia .face {
+	padding: .2rem;
+	border-radius: .5rem;
+	background: #3b5998;
+	transition: .3s;
+	cursor: pointer;
+}
+
+.container .socialMedia .rss {
+	padding: .2rem;
+	border-radius: .5rem;
+	background: #8a8214;
+	transition: .3s;
+	cursor: pointer;
+}
+
+.container .socialMedia .twitch {
+	padding: .25rem;
+	border-radius: .5rem;
+	background: #6441a5;
+	transition: .3s;
+	cursor: pointer;
+}
+
+.container .socialMedia .youtube {
+	padding: .1rem;
+	border-radius: .5rem;
+	background: #FF0000;
+	transition: .3s;
+	cursor: pointer;
+}
+
+.face:hover,
+.insta:hover,
+.rss:hover,
+.twitch:hover,
+.youtube:hover {
+	transform: scale(1.1)
+}

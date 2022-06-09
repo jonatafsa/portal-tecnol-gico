@@ -1,0 +1,18 @@
+.featuredArticles {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.featuredArticles h2 {
+    width: 100%;
+    border-bottom: 2px solid var(--main-color-1);
+    color: var(--main-color-1);
+}
+
+.featuredArticles p {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
