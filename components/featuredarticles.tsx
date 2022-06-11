@@ -28,7 +28,7 @@ export default function FeaturedArticles() {
       ) : (
         posts.map(post => (
           post.emphasis === true ? (
-            <div className={styles.post}>
+            <div className={styles.post} key={post.slug}>
             <div className={styles.postImg}>
               <img src={post.thumbnail} alt="" />
             </div>

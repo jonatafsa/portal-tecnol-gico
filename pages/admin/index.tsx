@@ -239,7 +239,7 @@ export default function Admin(props: PostsProps) {
               <h4>Marque a(s) categorias da postagem</h4>
 
               {categories.map(item => (
-                <li>
+                <li key={item.category}>
                   <input
                     type="checkbox"
                     id={item.category}
@@ -267,7 +267,7 @@ export default function Admin(props: PostsProps) {
         <h2>Selecione as postagens em destaque</h2>
 
         {props.posts.map(post => (
-          <div className={styles.post} id={post.slug}>
+          <div className={styles.post} id={post.slug} key={post.slug}>
             <div className={styles.actions}>
               <span>
                 {post.favorite === true ? (

@@ -92,7 +92,7 @@ export default function Home(props: PostsProps) {
           <div className={styles.topMainHeader}>
 
             {headerTopPosts.map(post => (
-              <Link href={`${post.slug}`}>
+              <Link href={`${post.slug}`} key={post.slug}>
                 <div className={styles.post}>
                   <div className={styles.postImg}>
                     <img src={post.thumbnail} alt="Post Name" />
@@ -107,7 +107,7 @@ export default function Home(props: PostsProps) {
           <div className={styles.footerMainHeader}>
 
             {headerBottomPosts.map(post => (
-              <Link href={`${post.slug}`}>
+              <Link href={`${post.slug}`} key={post.slug}>
                 <div className={styles.post}>
                   <div className={styles.postImg}>
                     <img src={post.thumbnail} alt="Post Name" />
@@ -124,7 +124,7 @@ export default function Home(props: PostsProps) {
 
           {props.posts.map(post => (
             post.slug === "The-Last-of-Us-Part-1-Remake-é-confirmado-com-lançamento-em-setembro-para-PC-e-PS5" ? (
-              <Link href={`${post.slug}`}>
+              <Link href={`${post.slug}`} key={post.slug}>
                 <div className={styles.post}>
                   <div className={styles.postImg}>
                     <img src={post.thumbnail} alt={post.title} />
@@ -135,7 +135,7 @@ export default function Home(props: PostsProps) {
                       {!post.category ? "" : (
                         Object.values(post.category).map((category: any) => (
                           <>
-                            <Link href={`categories/${category.name}`}>
+                            <Link href={`categories/${category.name}`} key={category.name}>
                               <span className={category.color}>{category.name}</span>
                             </Link>
                           </>
@@ -162,7 +162,7 @@ export default function Home(props: PostsProps) {
             <h2>Todas as postagens</h2>
 
             {postsByDate.map(post => (
-              <Link href={`${post.slug}`}>
+              <Link href={`${post.slug}`} key={post.slug}>
                 <div className={styles.post}>
 
                   <div className={styles.postImg}>
@@ -174,7 +174,7 @@ export default function Home(props: PostsProps) {
                       {!post.category ? "" : (
                         Object.values(post.category).map((category: any) => (
                           <>
-                            <Link href={`categories/${category.name}`}>
+                            <Link href={`categories/${category.name}`} key={category.name}>
                               <span className={category.color}>{category.name}</span>
                             </Link>
                           </>
