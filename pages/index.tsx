@@ -64,18 +64,14 @@ export default function Home(props: PostsProps) {
     setHeaderBottomPosts(headerBottomPosts)
     setHeaderTopPosts(headerTopPosts)
 
-    const ordened = props.posts.sort(orderPosts)
+    const ordened = props.posts.sort(function(a,b){
+      // Turn your strings into dates, and then subtract them
+      // to get a value that is either negative, positive, or zero.
+      return new Date(b.date).getDate() - new Date(a.date).getDate()
+    })
 
   setPostsByDate(ordened)
   }, [])
-
-  function orderPosts(a: any, b: any) { 
-    if(new Date(a.date).getTime() > new Date(b.date).getTime()) {
-      return - 1 
-    } else {
-      return true
-    }
-}
 
   if (typeof window !== 'undefined') {
     document.body.classList.add("dark")
