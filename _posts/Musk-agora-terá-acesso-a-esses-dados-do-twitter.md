@@ -9,7 +9,7 @@ Twitter supostamente entregará dados internos para acalmar os medos de Musk sob
 
 Na segunda-feira, o Twitter compartilhou uma carta da equipe jurídica de Musk em um arquivamento da SEC , declarando que Musk precisava de mais transparência em relação a “spam e contas falsas” no serviço antes que ele pudesse avançar com o acordo. O Twitter estima  que os bots representem menos de 5% das contas do site, mas o CEO do “ pato manco ”, Parag Agrawal, disse que não acha que esse cálculo possa ser verificado externamente, já que exige o uso de dados privados da empresa (e é aí que Musk enviou ao CEO um emoji de cocô).
 
-<blockquote class="twitter-tweet"><p lang="und" dir="ltr">💩</p>&mdash; Elon Musk (@elonmusk) <a href="https://twitter.com/elonmusk/status/1526246899606601730?ref_src=twsrc%5Etfw">May 16, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="und" dir="ltr">💩</p>&mdash; Elon Musk (@elonmusk) <a href="https://twitter.com/elonmusk/status/1526246899606601730?ref_src=twsrc%5Etfw">May 16, 2022</a></blockquote> 
 
 Aparentemente, Musk agora terá acesso a esses dados, que o Twitter inicialmente não queria entregar. O “firehose” contém informações sobre cada tweet enviado, em qual dispositivo ele é enviado e outras informações sobre a conta.
 

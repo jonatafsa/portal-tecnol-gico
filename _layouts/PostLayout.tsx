@@ -31,11 +31,12 @@ export default function PostLayout(props: PostLayoutProps) {
 
         <meta name="description" content={props.description} />
 
-        <meta property="og:site_name" content="Blog InterSolar" />
+        <meta property="og:site_name" content="JS - Portal de notícias" />
 
         <meta property="og:title" content={props.title} />
         <meta property="og:description" content={props.description} />
 
+        <meta property="og:image" content={props.thumbnail} />
         <meta property="og:image:type" content="image/png" />
 
         <meta property="og:image:width" content="1200" />
