@@ -1,21 +1,23 @@
 ---
-title: "A queda do NFT é real, BOOM do comércio ao consumidor esvaziou"
-description: "Empurrando os unicórnios e as empresas recentemente públicas para modos defensivos, o declínio na atividade de negociação do consumidor também está se estendendo a novas categorias de ativos, indicam os dados, como tokens não fungíveis (NFTs)."
+title: "Meta lança novos recursos no Instagram e Facebook"
+description: "A Meta anunciou hoje que está lançando novos recursos de Reels para Instagram e Facebook. Mais notavelmente, a empresa está lançando um adesivo “Add Yours” para Reels em ambas as redes sociais. O adesivo permite que os usuários respondam aos rolos de outros usuários com os seus próprios."
 by: "Jonata Santos"
 avatar: "/avatar.jpg"
 ---
 
-De acordo com o braço de dados do The Block , as vendas semanais de NFT caíram pouco mais de 70% de uma alta de quase 1 milhão de unidades na terceira semana de 2022 para pouco mais de um quarto de milhão na semana mais recente no conjunto de dados, que começou em os últimos dias de maio. O declínio no volume de vendas de NFT não é novo, mas cresceu em gravidade nas últimas semanas, acrescentando novo peso ao argumento de que o mercado de criptomoedas ou web3 está em um período de correção – o que alguns descrevem como um “inverno”.
+Cada vez que você compartilhar um novo prompt Add Yours, os Reels adicionados por outras pessoas aparecerão em uma página dedicada a esse prompt. Na parte superior da página, as pessoas verão quem iniciou o prompt para dar crédito ao criador original. Embora o recurso tenha como objetivo fazer com que os usuários colaborem, ele também pode ser visto como uma maneira de descobrir mais pessoas para seguir.
 
 <div class="two-columns">
-<img src="https://cyberpost.co/wp-content/uploads/2022/05/photo_2022-05-04_18-23-20.jpg" />
+<img src="https://techcrunch.com/wp-content/uploads/2022/08/instagram-reels-add-yours.png?resize=680,680" />
 <div>
-O declínio nas vendas de NFT não ocorre em meio a um congelamento nas recentes rodadas de financiamento para empresas focadas em NFT, no entanto. Uma rápida varredura das manchetes do TechCrunch mostra o contrário. Claro, Yuga Labs of Bored Ape levantou uma rodada de US $ 450 milhões da a16z com uma avaliação de US $ 4 bilhões em março, mas tem havido muita atividade desde esse evento.
+O recurso foi introduzido pela primeira vez no Instagram Stories no outono passado. A empresa diz que o adesivo é um recurso popular do Stories, por isso faz sentido para a Meta trazê-lo também Reels, especialmente considerando seus planos de dobrar o recurso de vídeo de formato curto. Como o adesivo incentiva os usuários a postar seus próprios Reels em resposta a um original, a Meta pode vê-lo como uma maneira de aumentar o número de Reels em suas plataformas, ao mesmo tempo em que faz com que usuários que possam não ter postado Reels compartilhem um.
 </div>
 </div>
 
-Em abril, a Glow Labs levantou US$ 4,15 milhões em capital inicial para seu projeto relacionado a NFT que quer ajudar “criadores a implantar um contrato inteligente sem necessidade de codificação em questão de segundos, permitindo que eles criem ofertas de fidelidade personalizadas sem muitos problemas. ” como escrevemos. No início de maio, a Americana arrecadou US$ 6,9 milhões para seus planos de ajudar “marcas e criadores a transformar itens físicos como roupas de rua, colecionáveis, carros e obras de arte em NFTs”.
+A Meta também anunciou que está abrindo o  Stars , os itens virtuais que permitem que os fãs expressem seu apoio aos seus criadores favoritos no Facebook Reels para todos os criadores elegíveis. A empresa expandiu anteriormente o Stars para o Facebook Reels e agora está lançando para todos os criadores qualificados. A Meta também observa que lançou recentemente novas opções móveis para começar a usar o Stars e acompanhar os ganhos.
 
-A lista de negócios recentes relacionados a NFT continua. Zora Labs levantou US$ 50 milhões em maio ; seu protocolo, disse o TechCrunch na época, “permite que artistas e desenvolvedores criem mercados e coleções NFT”. Menos de uma semana depois, a Arianee anunciou que havia arrecadado US$ 21 milhões por seu trabalho de assistência a “certificados de propriedade digital e autenticidade em nome de marcas parceiras”. E no final de maio, a Ayoken levantou US$ 1,4 milhão para seu mercado NFT focado em criadores.
+Além disso, o Meta agora permite que todos os usuários publiquem bobinas cruzadas do Instagram para o Facebook facilmente. A empresa diz que isso permitirá que os criadores construam comunidades nas duas redes sociais e participem de programas de monetização oferecidos pelo Facebook e Instagram.
 
-Todos esses eventos de financiamento são baseados no crescimento do mercado NFT. O TechCrunch citou dados em abril, por exemplo, de que o mercado de NFT atingiu US$ 41 bilhões em 2021 , e outra fonte disse na mesma época que o mercado poderia dobrar este ano. 
+A Meta também está lançando Facebook Reels criados automaticamente, que são Reels compilados de suas histórias do Facebook compartilhadas anteriormente. O novo recurso foi projetado para facilitar o compartilhamento de suas memórias favoritas como bobinas. Dado o foco crescente da Meta em Reels, não é surpresa que a empresa esteja procurando incentivar os usuários a transformar suas Histórias em Reels.
+
+Fonte: https://techcrunch.com/
