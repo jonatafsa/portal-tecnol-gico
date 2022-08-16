@@ -738,6 +738,15 @@ ul.ks-cboxtags li input[type="checkbox"]:focus+label {
   width: 100%;
 }
 
+/* @media (max-width: 768px) {
+  .twitter-tweet {
+    width: 80%;
+    height: 400px;
+    object-fit: contain;
+    overflow: hidden;
+  }
+} */
+
 .iframe iframe {
   width: 900px;
   height: 400px;

@@ -58,6 +58,45 @@
   object-fit: cover;
 }
 
+@media (max-width: 768px) {
+  .container {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    max-width: 100vw;
+    padding: 1.5rem;
+  }
+
+  .article {
+    max-width: 100vw;
+
+  }
+
+  .content section h2 {
+    font-size: 1.2rem;
+  }
+
+  .article .postHeader {
+    font-size: .75rem;
+  }
+
+  .article .thumbnail {
+    height: fit-content;
+    object-fit: contain;
+  }
+
+  .article .description p {
+    font-size: .8rem !important;
+    color: #000 !important;
+    font-weight: 700;
+  }
+}
+
 .article .description {
   padding: 2rem 0;
   font-size: 1.35rem;
