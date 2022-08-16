@@ -119,8 +119,8 @@ export default function Home(props: PostsProps) {
               onSlideChange={() => console.log('slide change')}
             >
 
-              {headerTopPosts.map(post => (
-                <SwiperSlide>
+              {headerTopPosts.map((post, index) => (
+                <SwiperSlide key={index}>
                   <Link href={`${post.slug}`} key={post.slug}>
                     <div className={styles.post}>
                       <div className={styles.postImg}>
@@ -151,8 +151,8 @@ export default function Home(props: PostsProps) {
               onSlideChange={() => console.log('slide change')}
             >
 
-              {headerBottomPosts.map(post => (
-                <SwiperSlide>
+              {headerBottomPosts.map((post, index) => (
+                <SwiperSlide key={index}>
                   <Link href={`${post.slug}`} key={post.slug}>
                     <div className={styles.post} style={{ fontSize: ".85rem"}}>
                       <div className={styles.postImg}>
