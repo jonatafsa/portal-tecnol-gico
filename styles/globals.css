@@ -95,6 +95,34 @@ a {
   text-decoration: none;
 }
 
+/* a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2.5px;
+  bottom: -2.5px;
+  left: 0;
+  background-color: var(--main-color-1);
+  transition: .3s ease-in-out;
+}
+
+a:hover::before {
+  width: 100%;
+} */
+
+/* a {
+  position: relative;
+  background: transparent;
+  color: var(--main-color-1);
+  font-weight: 500;
+  font-size: .9rem;
+  letter-spacing: 0px;
+  border-bottom: 2.5px solid var(--main-color-2);
+  border-radius: 0px;
+  padding: .15rem 0;
+  min-width: revert;
+} */
+
 ul {
   list-style: none;
 }
@@ -154,11 +182,21 @@ button {
   padding: .8rem 1.6rem;
   font-size: .8rem;
   min-width: 100px;
-  border-radius: 15px;
+  border: 0;
+  border-radius: 10px;
   background-color: var(--main-color-1);
   color: var(--text-color);
   cursor: pointer;
   transition: .3s;
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  filter: brightness(.5);
 }
 
 button:hover {
@@ -167,10 +205,67 @@ button:hover {
 }
 
 a {
-  width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
+  color: var(--main-color-2);
+  transition: .3s;
+}
+
+a:hover {
+  filter: brightness(.8)
+}
+
+input {
+  display: inline-block;
+  padding: .9rem 1.5rem;
+  background: var(--bg-color-3);
+  border: 2px solid var(--bg-color-3);
+  width: 100%;
+  border-radius: 17px;
+  font-family: inherit;
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--heading-color);
+  outline: none;
+  transition: .3s;
+}
+
+input::placeholder {
+  color: var(--text-color);
+}
+
+input:hover {
+  filter: brightness(97%);
+}
+
+input:valid,
+input:focus {
+  filter: brightness(100%);
+  background: var(--bg-color-1);
+  border-color: var(--main-color-1);
+}
+
+.btn {
+  display: inline-block;
+  padding: .9rem 1.75rem;
+  border-radius: 17px;
+  background-color: var(--main-color-1);
+  color: #FFF;
+  font-size: .85rem;
+  letter-spacing: .4px;
+  min-width: 125px;
+  text-align: center;
+  text-transform: capitalize;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+  transition: .3s;
+}
+
+li {
+  width: fit-content;
+  cursor: pointer;
 }
 
 /* =================================== REUSABLE CSS =================================== */
@@ -207,9 +302,20 @@ a {
 
 .hide {
   display: none;
-  opacity: .15; 
+  opacity: .15;
   width: 1px;
   pointer-events: none;
+}
+
+.sub-heading {
+  color: var(--heading-color);
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  border-left: 3px solid var(--main-color-2);
+  padding: .13rem .75rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  transition: .3s color;
 }
 
 /* =================================== MENU ADN MODAL TOGGLE =================================== */
@@ -225,12 +331,46 @@ a {
   transition: .3s;
   overflow: hidden;
   opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 1.15rem;
+  gap: 1rem;
 }
 
-.toggleMenu ul {
+.toggleMenu span {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.toggleMenu .categories {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 100%;
+  height: 0;
+  border-radius: .5rem;
+  padding: 0;
+  background-color: var(--bg-color-2);
+  color: var(--main-color-2);
+  font-size: 1rem;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.toggleMenu .categories li {
+  font-size: 1rem;
+  width: 100%;
+  transition: .3s;
+}
+
+.toggleMenu .categories li:hover {
+  filter: brightness(.8)
 }
 
 .modal {
@@ -351,6 +491,18 @@ a {
 
 .active-green {
   color: rgb(35, 184, 139);
+}
+
+@media (max-width: 767px) {
+  .red,
+  .blue,
+  .green,
+  .yellow,
+  .gray,
+  .black {
+    font-size: .7rem;
+    padding: .15rem .25rem;
+  }
 }
 
 /* =================================== CHECK BOXES =================================== */
@@ -589,4 +741,22 @@ ul.ks-cboxtags li input[type="checkbox"]:focus+label {
 .iframe iframe {
   width: 900px;
   height: 400px;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+}
+
+
+/* =================================== TRANSITIONS =================================== */
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.categoriesToggle {
+  height: fit-content !important;
+  padding: 1rem !important;
 }

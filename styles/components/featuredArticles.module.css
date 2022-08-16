@@ -16,3 +16,9 @@
     align-items: center;
     gap: .5rem;
 }
+
+@media (max-width: 768px) {
+    .featuredArticles {
+      display: none;
+    }
+  }

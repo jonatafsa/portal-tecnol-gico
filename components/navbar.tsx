@@ -3,14 +3,30 @@ import styles from '../styles/components/navbar.module.css'
 import { FaBars, FaFacebookSquare, FaRssSquare, FaTwitch } from 'react-icons/fa'
 import { AiFillInstagram, AiFillYoutube, AiOutlineCloseCircle } from 'react-icons/ai'
 import Link from 'next/link'
+import { IoMdArrowDropdown } from 'react-icons/io'
+import { get, getDatabase, ref } from 'firebase/database'
 
 export default function Navbar() {
 
   const [pageYOffset, setPageYOffset] = useState(0)
+  const [categories, setCategories] = useState([])
 
-  useEventListener(undefined, 'scroll', () => {
-    setPageYOffset(window.pageYOffset)
-  })
+  useEffect(() => {
+    //firebase get database
+    const db = getDatabase()
+    const DbRef = ref(db, '/categories')
+
+    get(DbRef).then(res => setCategories(res.val()))
+
+    //Pega o offset do scroll
+    window.addEventListener('scroll', () => {
+      setPageYOffset(window.pageYOffset)
+    })
+  }, [])
+
+  // useEventListener(undefined, 'scroll', () => {
+  //   setPageYOffset(window.pageYOffset)
+  // })
 
   if (pageYOffset > 0 && typeof document !== 'undefined') {
     const nav = document.querySelector("#nav")
@@ -28,6 +44,11 @@ export default function Navbar() {
     const nav = document.querySelector(".nav")
     menu?.classList.toggle("toggleMenuOpen")
     nav?.classList.toggle("open")
+  }
+
+  const categoriesToggle = (e: any) => {
+    const categories = document.querySelector(".categories")
+    categories?.classList.toggle("categoriesToggle")
   }
 
   return (
@@ -49,12 +70,26 @@ export default function Navbar() {
 
       <div className="toggleMenu" id="menu">
         <AiOutlineCloseCircle onClick={toggleMenu} className="close" />
-        <ul>
-          <li>
-            <a href="#highlights">Destaques</a>
-          </li>
-          <a href="#articles">Artigos</a>
+
+        <Link href="/"><a>Voltar ao início</a></Link>
+        <span
+          onClick={categoriesToggle}
+        >Categorias <IoMdArrowDropdown size={25} />
+        </span>
+
+        <ul className="categories">
+          {Object.values(categories).map((category: any, index) => (
+            <Link href={`/categories?${category.category}`}>
+            <li
+              className={category.color}
+              key={index}
+            >
+              {category.category}
+            </li>
+            </Link>
+          ))}
         </ul>
+
       </div>
 
       <div className="modal" onClick={toggleMenu}>
@@ -64,16 +99,16 @@ export default function Navbar() {
   )
 }
 
-export const useEventListener = (
-  target: EventTarget | undefined,
-  event: string,
-  listener: EventListenerOrEventListenerObject,
-  trigger = true
-): void => {
-  useEffect(() => {
-    const t = target || window
-    t.addEventListener(event, listener);
-    trigger && t.dispatchEvent(new Event(event));
-    return () => t.removeEventListener(event, listener);
-  });
-};
+// export const useEventListener = (
+//   target: EventTarget | undefined,
+//   event: string,
+//   listener: EventListenerOrEventListenerObject,
+//   trigger = true
+// ): void => {
+//   useEffect(() => {
+//     const t = target || window
+//     t.addEventListener(event, listener);
+//     trigger && t.dispatchEvent(new Event(event));
+//     return () => t.removeEventListener(event, listener);
+//   });
+// };

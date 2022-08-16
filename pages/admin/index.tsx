@@ -14,6 +14,9 @@ import { BsCircleFill } from 'react-icons/bs'
 import { FcDeleteDatabase } from 'react-icons/fc'
 
 import { getAllPosts } from '../api/posts'
+import Cookies from 'js-cookie'
+import { useRouter } from 'next/router'
+import { useAuth } from '../../context/AuthContext'
 
 interface PostsProps {
   posts: Array<{
@@ -31,6 +34,8 @@ interface PostsProps {
 }
 
 export default function Admin(props: PostsProps) {
+  const Router = useRouter()
+  const { user, logout } = useAuth()
 
   const [post, setPost] = useState<any>()
   const [image, setImage] = useState<any>()
@@ -200,6 +205,23 @@ export default function Admin(props: PostsProps) {
     })
   }
 
+  if (typeof window !== "undefined") {
+
+    const token = Cookies.get('token')
+
+    if (!token) {
+      Router.replace("/login")
+      return null
+    }
+  }
+
+  if (user) {
+    if (user?.email !== "jonatafsa.js@gmail.com") {
+      Router.replace("/")
+      return null
+    }
+  }
+
   if (typeof window !== 'undefined') {
     document.body.classList.add("dark")
   }
@@ -307,6 +329,10 @@ export default function Admin(props: PostsProps) {
             />
           </div>
         ))}
+      </div>
+
+      <div className="logout">
+        <button onClick={logout}>Sair</button>
       </div>
 
       <div className="modal">

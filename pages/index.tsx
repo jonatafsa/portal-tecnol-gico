@@ -13,6 +13,10 @@ import FeaturedArticles from '../components/featuredarticles'
 import Footer from '../components/footer'
 import { useEffect, useState } from 'react'
 
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 interface PostsProps {
   posts: Array<{
     slug: string
@@ -64,13 +68,13 @@ export default function Home(props: PostsProps) {
     setHeaderBottomPosts(headerBottomPosts)
     setHeaderTopPosts(headerTopPosts)
 
-    const ordened = props.posts.sort(function(a,b){
+    const ordened = props.posts.sort(function (a, b) {
       // Turn your strings into dates, and then subtract them
       // to get a value that is either negative, positive, or zero.
       return new Date(b.date).getDate() - new Date(a.date).getDate()
     })
 
-  setPostsByDate(ordened)
+    setPostsByDate(ordened)
   }, [])
 
   if (typeof window !== 'undefined') {
@@ -90,7 +94,6 @@ export default function Home(props: PostsProps) {
       <main className={styles.main}>
         <div className={styles.mainHeader} id="highlights">
           <div className={styles.topMainHeader}>
-
             {headerTopPosts.map(post => (
               <Link href={`${post.slug}`} key={post.slug}>
                 <div className={styles.post}>
@@ -101,11 +104,69 @@ export default function Home(props: PostsProps) {
                 </div>
               </Link>
             ))}
+          </div>
 
+          <div className={styles.mobileMainHeader} style={{ marginTop: "3.85rem"}}>
+            <Swiper
+              // install Swiper modules
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={0}
+              slidesPerView={1}
+              // navigation
+              pagination={{ clickable: true }}
+              // scrollbar={{ draggable: true }}
+              onSwiper={(swiper) => console.log(swiper)}
+              onSlideChange={() => console.log('slide change')}
+            >
+
+              {headerTopPosts.map(post => (
+                <SwiperSlide>
+                  <Link href={`${post.slug}`} key={post.slug}>
+                    <div className={styles.post}>
+                      <div className={styles.postImg}>
+                        <img src={post.thumbnail} alt="Post Name" />
+                      </div>
+                      <p>{post.title}</p>
+                    </div>
+                  </Link>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+          <div className={styles.headerPublicity}>
+            --- Publicidade ---
+          </div>
+
+          <div className={styles.mobileMainHeader}>
+            <Swiper
+              // install Swiper modules
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={10}
+              slidesPerView={1}
+              navigation
+              pagination={{ clickable: true }}
+              // scrollbar={{ draggable: true }}
+              onSwiper={(swiper) => console.log(swiper)}
+              onSlideChange={() => console.log('slide change')}
+            >
+
+              {headerBottomPosts.map(post => (
+                <SwiperSlide>
+                  <Link href={`${post.slug}`} key={post.slug}>
+                    <div className={styles.post} style={{ fontSize: ".85rem"}}>
+                      <div className={styles.postImg}>
+                        <img src={post.thumbnail} alt="Post Name" />
+                      </div>
+                      <p>{post.title}</p>
+                    </div>
+                  </Link>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
 
           <div className={styles.footerMainHeader}>
-
             {headerBottomPosts.map(post => (
               <Link href={`${post.slug}`} key={post.slug}>
                 <div className={styles.post}>

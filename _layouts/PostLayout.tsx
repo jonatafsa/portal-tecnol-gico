@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Comments from '../components/comments'
 import FeaturedArticles from '../components/featuredarticles'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
@@ -85,6 +86,18 @@ export default function PostLayout(props: PostLayoutProps) {
             <FeaturedArticles />
           </aside>
         </div>
+
+        <section className={styles.sectionComment}>
+          <div className={styles.comments}>
+            <Comments
+              post={{
+                slug: props.slug,
+                id: props.title,
+                title: props.title
+              }}
+            />
+          </div>
+        </section>
       </div>
       <Footer />
     </>

@@ -1,0 +1,222 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1rem;
+  gap: 1rem;
+  color: var(--text-color);
+}
+
+.container h3 {
+  width: 100%;
+}
+
+.container textarea {
+  width: 100%;
+  height: 7.5rem;
+  background-color: var(--bg-color);
+  border: 1px solid var(--main-color-1);
+  color: var(--text-color);
+  border-radius: .5rem;
+  resize: none;
+  padding: 1rem;
+}
+
+.container .commentValidate {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.container .commentValidate button {
+  margin-left: auto;
+  font-weight: 600;
+}
+
+.container .commentValidate button[disabled] {
+  background: rgb(224, 224, 224);
+  color: rgb(170, 170, 170);
+  cursor: not-allowed;
+}
+
+.container .commentValidate img {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+}
+
+.container .comment {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  width: 80%;
+  background: var(--bg-color-2);
+  border: 1px solid var(--bg-color-transparent);
+  border-radius: .5rem;
+  position: relative;
+}
+
+.container .comment p {
+  padding: 1rem;
+}
+
+.container .comment div {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0;
+}
+
+.container .comment div img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin: 0;
+}
+
+.container .comment .date {
+  font-size: .8rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.container .comment .delete {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: .5rem;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+}
+
+.container .comment .delete:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.container .commentEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: .5rem;
+  width: 100%;
+}
+
+.container .commentEmpty p {
+  max-width: 25rem;
+  text-align: center;
+}
+
+.container .deleteModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+  z-index: 99;
+}
+
+.container .deleteModal::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+}
+
+.container .deleteModal .modal_content {
+  position: relative;
+  overflow: hidden;
+
+  /* width: 70%; */
+  /* height: 58%; */
+  background: #fff;
+  border: var(--border);
+  border-radius: 1rem;
+  -webkit-box-shadow: 5px 5px 15px 5px var(--font);
+  box-shadow: 5px 5px 15px 5px var(--font);
+}
+
+.container .deleteModal .modal_content .close_icon {
+  position: absolute;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  transition: 0.2s ease-in-out;
+}
+
+.container .deleteModal .modal_content .close_icon:hover {
+  color: red;
+}
+
+.container .deleteModal .modal_content .delete_user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 6rem;
+}
+
+.container .deleteModal .modal_content .delete_user .buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.container .deleteModal .modal_content .delete_user .buttons .confirm {
+  background: rgb(179, 40, 40);
+}
+
+.container .deleteModal .modal_content .delete_user .buttons button {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  padding: 1rem;
+  background: #1A73E8;
+  color: #FFF;
+  border-radius: .5rem;
+  transition: .2s ease-in-out;
+  cursor: pointer;
+}
+
+.container .deleteModal .modal_content .delete_user .buttons button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.01);
+}
+
+@media (max-width: 768px) {
+  .container .deleteModal .modal_content {
+    /* width: 78%; */
+    /* height: 95%; */
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .deleteModal {
+    justify-content: left;
+  }
+}
+
+@media (max-width: 900px) {
+  .modalDelete {
+    width: 90%;
+    height: 90%;
+    overflow: auto;
+  }
+}
