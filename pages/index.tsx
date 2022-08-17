@@ -28,6 +28,7 @@ interface PostsProps {
     avatar: string
     date: string
     favorite: string
+    postDate: number
   }>
 }
 
@@ -71,7 +72,8 @@ export default function Home(props: PostsProps) {
     const ordened = props.posts.sort(function (a, b) {
       // Turn your strings into dates, and then subtract them
       // to get a value that is either negative, positive, or zero.
-      return new Date(b.date).getDate() - new Date(a.date).getDate()
+      console.log(new Date(a.postDate).getMonth(), new Date(b.postDate).getMonth())
+      return new Date(Number(b.postDate)).getDate() - new Date(Number(a.postDate)).getDate()
     })
 
     setPostsByDate(ordened)

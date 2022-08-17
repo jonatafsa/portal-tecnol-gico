@@ -36,6 +36,7 @@ export async function getAllPosts() {
           by: meta.data.by,
           avatar: meta.data.avatar,
           date: snapshot.val().date,
+          postDate: snapshot.val().postDate,
           favorite: snapshot.val().favorite || null,
           emphasis: snapshot.val().emphasis || null
         })
@@ -66,6 +67,7 @@ export async function getPostByCategory(category: any) {
             by: snapshot.val().by,
             avatar: snapshot.val().avatar,
             date: snapshot.val().date,
+            postDate: snapshot.val().postDate,
             favorite: snapshot.val().favorite || null,
             emphasis: snapshot.val().emphasis || null
           })
