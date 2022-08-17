@@ -6,8 +6,7 @@ avatar: "/avatar.jpg"
 ---
 
 Há muita coisa acontecendo no último grande evento de crossover do Fortnite , desde festas de observação de Dragon Ball Super no jogo até duelos de Kamehameha, mas até agora nada supera simplesmente assistir aos ícones do anime explodirem Juiceou Griddy. Sim, a cabeça de Goku é muito grande, as pernas de Vegeta certamente têm um ou dois quadris extras, e Bulma merece muito mais armas . Dito isto, a aquisição do lutador Z provavelmente já está a caminho de ser um dos melhores jogos de Dragon Ball dos últimos anos.
-
-<video poster="https://i.kinja-img.com/gawker-media/image/upload/c_scale,fl_progressive,q_80,w_800/d803ffbed29d27695b889d1ad580b346.jpg" data-mp4src="https://i.kinja-img.com/gawker-media/image/upload/c_scale,fl_progressive,q_80,w_800/d803ffbed29d27695b889d1ad580b346.mp4" data-postersrc="https://i.kinja-img.com/gawker-media/image/upload/c_scale,fl_progressive,q_80,w_800/d803ffbed29d27695b889d1ad580b346.jpg" loop="" autoplay="" muted="" playsinline="" data-chomp-id="d803ffbed29d27695b889d1ad580b346" data-format="gif" data-alt="A GIF shows Goku and Vegeta doing the fusion dance to get more V-Bucks. " data-anim-src="https://i.kinja-img.com/gawker-media/image/upload/c_scale,fl_progressive,q_80,w_800/d803ffbed29d27695b889d1ad580b346.jpg"><source src="https://i.kinja-img.com/gawker-media/image/upload/c_scale,fl_progressive,q_80,w_800/d803ffbed29d27695b889d1ad580b346.mp4" type="video/mp4"></video>
+<img src="https://meups.com.br/wp-content/uploads/2022/08/Dragon-Ball-e-Fortnite-Goku-e-Vegete.jpg" />
 
 “Rei Vegeta e Bardock se sacrificaram por isso?” perguntou um fã no Twitter enquanto assistia a pantomima de Kakarot puxando copos de garrafa de cocaína até os olhos.
 
